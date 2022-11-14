@@ -50,12 +50,13 @@ contract('MetaCoin', function (accounts) {
     MetaCoin.deployed()
         .then(meta => {
           return tronWeb.contract().at(meta.address)
-              .then(meta2 => {
-                meta2.Transfer().watch((err, res) => {
+              .then(async meta2 => {
+                const transferEvent = await meta2.Transfer().watch((err, res) => {
                   if(res) {
                     assert.equal(res.result._from, tronWeb.address.toHex(accounts[0]))
                     assert.equal(res.result._to, tronWeb.address.toHex(accounts[3]))
                     assert.equal(res.result._value, 1)
+                    transferEvent.stop()
                     done()
                   }
                 })
