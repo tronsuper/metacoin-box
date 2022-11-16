@@ -39,8 +39,8 @@ contract('MetaCoin', function (accounts) {
     const meta = await MetaCoin.deployed();
     await wait(1);
     const metaCoinBalance = (await meta.getBalance.call(accounts[0])).toNumber();
-    const metaCoinEthBalance = (await meta.getBalanceInEth.call(accounts[0])).toNumber();
-    assert.equal(metaCoinEthBalance, 2 * metaCoinBalance, "Library function returned unexpected function, linkage may be broken");
+    const metaCoinConvertedBalance = (await meta.getConvertedBalance.call(accounts[0])).toNumber();
+    assert.equal(metaCoinConvertedBalance, 2 * metaCoinBalance, "Library function returned unexpected function, linkage may be broken");
   });
 
   it("should send coins from account 0 to 3 and verify that a Transfer event has been emitted", function (done) {

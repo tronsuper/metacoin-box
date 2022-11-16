@@ -99,7 +99,7 @@ App = {
           "type": "address"
         }
       ],
-      "name": "getBalanceInEth",
+      "name": "getConvertedBalance",
       "outputs": [
         {
           "name": "",
