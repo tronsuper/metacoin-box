@@ -13,7 +13,7 @@ after open a new terminal and install the version of Node you prefer, for exampl
 nvm install lts/dubnium
 ```
 
-On Windows, you can install Nvm following the instructions at  
+On Windows, you can install Nvm following the instructions at
 https://github.com/coreybutler/nvm-windows
 
 In any case, when you have Node installed, install TronBox globally:
@@ -31,7 +31,7 @@ module.exports = {
   networks: {
     development: {
       // For trontools/quickstart docker image
-      privateKey: 'da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0',
+      privateKey: '0000000000000000000000000000000000000000000000000000000000000001',
       consume_user_resource_percent: 0,
       fee_limit: 100000000,
       fullHost: "http://127.0.0.1:9090",
@@ -70,20 +70,20 @@ tronbox test
 
 ### Run the example dApp on Shasta
 
-1. You need an account with some Shasta TRX. 
+1. You need an account with some Shasta TRX.
 
 2. If you don't have a Tron wallet, install the Chrome Extension version of TronLink, from https://www.tronlink.org/ and create an account.
 
-3. Click the TronLink extension, click on Settings and Node Manage and select Shasta. 
+3. Click the TronLink extension, click on Settings and Node Manage and select Shasta.
 
 4. If you don't have any Shasta TRX, open https://www.trongrid.io/faucet and require some Shasta TRX at the bottom of the page.
 
 5. Add a file called `.env` in the root of this repo and edit it, adding a line with your Private Key, somethink like:
  ```
- export PRIVATE_KEY_SHASTA=0122194812081292938435739857438538457349573485358345345934583554
+ export PRIVATE_KEY_SHASTA=0000000000000000000000000000000000000000000000000000000000000001
  ```
  and save it. You can find an example in `sample-env`.
- 
+
 6. Set the dApp. The dApp needs to know the address where the MetaCoin contract has been deployed. We have put in the box a special script:
 
 ```
